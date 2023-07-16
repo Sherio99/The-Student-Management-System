@@ -1,0 +1,194 @@
+﻿<Window x:Class="Desktop01_3893.AddUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop01_3893"
+        mc:Ignorable="d"
+        Title="{Binding Title,UpdateSourceTrigger=PropertyChanged}" Height="450" Width="800">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF427DDE"/>
+            <GradientStop Color="#FF23C16E" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.DataContext>
+        <local:AddUserVM/>
+    </Window.DataContext>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="738.8"/>
+            <ColumnDefinition Width="39.15"/>
+            <ColumnDefinition Width="5.35"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel
+            
+            
+            
+            Width="800" Height="450" HorizontalAlignment="Center"
+            VerticalAlignment="Center" Grid.ColumnSpan="3">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/So-You-Want-to-Be-a…-Web-Developer-R.jpg"/>
+            </StackPanel.Background>
+
+            <Border BorderBrush="#FF186C98" BorderThickness="2"
+                                Padding="0.1" CornerRadius="5" Width="300" Height="34" RenderTransformOrigin="0.5,0.514" HorizontalAlignment="Center" >
+                <Border.Background>
+                    <ImageBrush Opacity="0.6"/>
+                </Border.Background>
+
+                <TextBlock Text="ADD USER DETAILS" Margin="0,4,0,0" Grid.Row="1" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" FontFamily="Agency FB" Foreground="#FFF9F7F7"/>
+            </Border>
+
+            <TextBlock Text=" First Name:" Margin="10,6,6,6" FontFamily="Comic Sans MS" Foreground="#FFF9EEEE" FontWeight="Bold" FontStyle="Italic" FontSize="14">
+                <TextBlock.Background>
+                    <SolidColorBrush Color="#FF111078" Opacity="0.6"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <TextBox Text="{Binding Firstname, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged" Height="23" Width="760" HorizontalAlignment="Left" Margin="10,0,0,0">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10" />
+                    </Style>
+                </TextBox.Resources>
+                <TextBox.Background>
+                    <SolidColorBrush Color="White" Opacity="0.4"/>
+                </TextBox.Background>
+            </TextBox>
+
+            <!--<TextBox Text="{Binding Firstname, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Column="1"  />-->
+            <TextBlock Text=" Last Name:" Margin="10,5,5,5" Grid.Row="1" FontFamily="Comic Sans MS" Foreground="#FFF9EEEE" FontWeight="Bold" FontStyle="Italic" FontSize="14">
+                <TextBlock.Background>
+                    <SolidColorBrush Color="#FF111078" Opacity="0.6"/>
+                </TextBlock.Background>
+            </TextBlock>
+
+            <TextBox Text="{Binding Lastname, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged" Height="23" Width="760" HorizontalAlignment="Left" Margin="10,0,0,0">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10" />
+                    </Style>
+                </TextBox.Resources>
+                <TextBox.Background>
+                    <SolidColorBrush Color="White" Opacity="0.4"/>
+                </TextBox.Background>
+            </TextBox>
+            <!--<TextBox Text="{Binding Lastname, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Column="1"/>-->
+            <TextBlock Text=" Age:" Margin="10,5,5,5" Grid.Row="1" FontFamily="Comic Sans MS" Foreground="#FFF9EEEE" FontWeight="Bold" FontStyle="Italic" FontSize="14">
+                <TextBlock.Background>
+                    <SolidColorBrush Color="#FF111078" Opacity="0.6"/>
+                </TextBlock.Background>
+            </TextBlock>
+
+            <TextBox Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged" Height="23" Width="760" HorizontalAlignment="Left" Margin="10,0,0,0">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10" />
+                    </Style>
+                </TextBox.Resources>
+                <TextBox.Background>
+                    <SolidColorBrush Color="White" Opacity="0.4"/>
+                </TextBox.Background>
+            </TextBox>
+            <TextBlock Text=" Date of Birth:" Margin="10,5,5,5" Grid.Row="1" FontFamily="Comic Sans MS" Foreground="#FFF9EEEE" FontWeight="Bold" FontStyle="Italic" FontSize="14">
+                <TextBlock.Background>
+                    <SolidColorBrush Color="#FF111078" Opacity="0.6"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <TextBox Text="{Binding Dateofbirth, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged" Height="23" Width="760" HorizontalAlignment="Left" Margin="10,0,0,0">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10" />
+                    </Style>
+                </TextBox.Resources>
+                <TextBox.Background>
+                    <SolidColorBrush Color="White" Opacity="0.4"/>
+                </TextBox.Background>
+            </TextBox>
+
+
+            <!--<TextBox Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Row="1" Grid.Column="1"/>-->
+            <!--<TextBlock Text="Date of Birth:" Margin="5" Grid.Row="1" HorizontalAlignment="Left"/>
+            <TextBlock Text="GPA"/>-->
+            <!--<TextBox Text="{Binding Dateofbirth, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged" Height="30" Width="700" HorizontalAlignment="Left" Margin="5,0,0,0">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10" />
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            -->
+            <!--<TextBox Text="{Binding Dateofbirth, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Row="1" Grid.Column="1"/>-->
+            <!--
+            
+            <TextBox Text="{Binding Gpa, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged" Height="30" Width="700" HorizontalAlignment="Left" Margin="5,0,0,0">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10" />
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>-->
+            <StackPanel Orientation="Horizontal"/>
+            <!--<TextBox Text="{Binding Gpa, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Row="1" Grid.Column="1"/>-->
+            <TextBlock Text=" GPA:" Margin="10,5,5,5" Grid.Row="1" FontFamily="Comic Sans MS" Foreground="#FFF9EEEE" FontWeight="Bold" FontStyle="Italic" FontSize="14">
+                <TextBlock.Background>
+                    <SolidColorBrush Color="#FF111078" Opacity="0.6"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <TextBox Text="{Binding Gpa01, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged" Height="23" Width="760" HorizontalAlignment="Left" Margin="10,0,0,0">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10" />
+                    </Style>
+                </TextBox.Resources>
+                <TextBox.Background>
+                    <SolidColorBrush Color="White" Opacity="0.4"/>
+                </TextBox.Background>
+            </TextBox>
+            <Button Content="Insert picture" Width="100" HorizontalAlignment="Left" Command="{Binding UploadPhotoCommand}" Margin="5,0,5,-30" Grid.Row="3" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Background="#FF17842A">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Image Height="40" HorizontalAlignment="Left" Width="100" VerticalAlignment="Top" Margin="120 12 0 0" Source="{Binding SelectedImage,UpdateSourceTrigger=PropertyChanged}" />
+
+
+            <CheckBox Name="McCheckBox"  
+               Canvas.Left="10" Canvas.Top="10"  
+               Content="I'll hereby confirm all the above details are true"  
+               IsChecked="False" IsThreeState="True" Height="18" Margin="0,0,0,10" Checked="McCheckBox_Checked_1" FontFamily="Rockwell" >
+            </CheckBox>
+            <!--<Button Content="Save" Command="{Binding SaveCommand}" Margin="0 10" Grid.Row="3" VerticalAlignment="Bottom" Grid.ColumnSpan="2"/>-->
+            <Button Content="Save" Command="{Binding SaveCommand}" Margin="0 10" Grid.Row="3" Grid.ColumnSpan="2" Height="20" Width="200" FontFamily="Castellar" FontSize="16" FontWeight="Bold" Foreground="#FFEEE8E8" Click="Button_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0B5E10"/>
+                        <GradientStop Color="#FF0B186A" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+
+        </StackPanel>
+
+    </Grid>
+</Window>

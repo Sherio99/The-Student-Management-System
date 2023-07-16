@@ -1,0 +1,159 @@
+﻿<Window x:Class="Desktop01_3893.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop01_3893"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:MainWindowVM/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="789*"/>
+            <ColumnDefinition Width="11*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Width="800" Height="100" 
+                    VerticalAlignment="Bottom" Orientation="Horizontal" Grid.ColumnSpan="2">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF10730B"/>
+                    <GradientStop Color="#FF193578" Offset="1"/>
+                    <GradientStop Color="#FF14553E" Offset="0.167"/>
+                    <GradientStop Color="#FF16425F" Offset="0.806"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Button Content="Add Student" Command="{Binding AddStudentCommand}"  Style="{StaticResource mainbutten}" FontFamily="Franklin Gothic Heavy" FontWeight="Bold" BorderBrush="#FFB6BE16" OpacityMask="#FFCBD410">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0B5E10"/>
+                        <GradientStop Color="#FF0B186A" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="Edit Student Student"  Style="{StaticResource mainbutten}" Command="{Binding ExecuteEditStudentCommandCommand}" FontFamily="Franklin Gothic Heavy" FontWeight="Bold">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0B5E10"/>
+                        <GradientStop Color="#FF0B186A" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="Delete Student"  Style="{StaticResource mainbutten}" Command="{Binding DeleteCommand}" FontFamily="Franklin Gothic Heavy">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0B5E10"/>
+                        <GradientStop Color="#FF0B186A" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+
+        </StackPanel>
+
+        <StackPanel Height="335" VerticalAlignment="Top" Orientation="Vertical" Grid.ColumnSpan="2" OpacityMask="#FF077539" >
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/So-You-Want-to-Be-a…-Web-Developer-R.jpg"/>
+            </StackPanel.Background>
+            <Border BorderBrush="#FF0D6505" BorderThickness="2"
+                                Padding="0.1" CornerRadius="5" Width="776" Height="68" RenderTransformOrigin="0.5,0.514" HorizontalAlignment="Left" Margin="5,0,0,0" >
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF21987A" Offset="0.996"/>
+                        <GradientStop Color="#FF148727" Offset="0.009"/>
+                        <GradientStop Color="#FF1F9670" Offset="0.883"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel x:Name="TableTitle" Margin="0,10,0,0"  HorizontalAlignment="Center" Width="770" Orientation="Horizontal"  >
+                    <Border BorderBrush="#FFF3FF00" BorderThickness="2"  
+                            Padding="0.1" CornerRadius="5" Width="150" Height="40" RenderTransformOrigin="0.5,0.582" Margin="5,0,0,10" HorizontalAlignment="Left" >
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF21987A"/>
+                                <GradientStop Color="#FF148727" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <TextBlock Text="First Name"  Style="{StaticResource ListView}" Margin="25,8,25,8" VerticalAlignment="Stretch" Width="NaN" FontFamily="Cooper Black" FontSize="14" Foreground="#FFFBF7F7" HorizontalAlignment="Stretch" />
+                    </Border>
+                    <Border BorderBrush="#FFE6FF00" BorderThickness="2"  
+                            Padding="0.1" CornerRadius="5" Width="150" Height="40" RenderTransformOrigin="0.5,0.582" Margin="0,0,0,10" >
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF21987A"/>
+                                <GradientStop Color="#FF148727" Offset="0.997"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <TextBlock Text="Last Name"   Style="{StaticResource ListView}" Margin="24,8,24,8" VerticalAlignment="Stretch" Width="NaN" FontFamily="Cooper Black" FontSize="14" Foreground="#FFFBF7F7" HorizontalAlignment="Stretch" />
+                    </Border>
+
+                    <Border BorderBrush="#FFE6FF00" BorderThickness="2"  
+                            Padding="0.1" CornerRadius="5" Width="123" Height="40" RenderTransformOrigin="0.5,0.582" Margin="0,0,0,10" >
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF21987A"/>
+                                <GradientStop Color="#FF148727" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <TextBlock Text="Age"  Style="{StaticResource ListView}" Height="30" Margin="34,10,35,-4" VerticalAlignment="Stretch" Width="NaN" FontFamily="Cooper Black" FontSize="14" Foreground="#FFFBF7F7" HorizontalAlignment="Stretch"/>
+                    </Border>
+                    <Border BorderBrush="#FFE6FF00" BorderThickness="2"  
+                            Padding="0.1" CornerRadius="5" Width="170" Height="40" RenderTransformOrigin="0.5,0.582" Margin="0,0,0,10" >
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF21987A"/>
+                                <GradientStop Color="#FF148727" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <TextBlock Text="Date of Birth"  Style="{StaticResource ListView}" Height="30" Margin="0,10,34,-4" VerticalAlignment="Stretch" Width="98" FontFamily="Cooper Black" FontSize="14" Foreground="#FFFBF7F7" HorizontalAlignment="Right" />
+                    </Border>
+                    <Border BorderBrush="#FFE6FF00" BorderThickness="2"  
+                            Padding="0.1" CornerRadius="5" Width="165" Height="40" RenderTransformOrigin="0.5,0.582" Margin="0,0,0,10" >
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF21987A"/>
+                                <GradientStop Color="#FF148727" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <TextBlock Text="GPA"  Style="{StaticResource ListView}" Height="30" Margin="0,10,0,-4" VerticalAlignment="Stretch" Width="52" FontFamily="Cooper Black" FontSize="14" Foreground="#FFFBF7F7"/>
+                    </Border>
+
+
+                </StackPanel>
+            </Border>
+            <ListView x:Name="Listview" Height="286" ItemsSource="{Binding Users}" 
+                     SelectedItem="{Binding SelectedUser}" SelectionChanged="Listview_SelectionChanged" VerticalContentAlignment="Top" BorderBrush="#FF133EE6" Width="780">
+                <ListView.Background>
+                    <SolidColorBrush Color="#FF42B286" Opacity="0.1"/>
+                </ListView.Background>
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <Border Background="LightSeaGreen" BorderBrush="#FFDADAC0" BorderThickness="2"
+                                Padding="0.1" CornerRadius="5" Width="770" Height="40" >
+                            <StackPanel Width="770" Orientation="Horizontal" OpacityMask="#FFD24313" >
+                                <StackPanel.Background>
+                                    <LinearGradientBrush EndPoint="10,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF2A5E62"/>
+                                        <GradientStop Color="#FF123E92" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </StackPanel.Background>
+
+                                <Image Width="30" Height="30" Margin="1" Source="{Binding Image}" />
+                                <TextBlock Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource ListView}" Margin="0,10,5,10" TextAlignment="Center" Foreground="#FFF8F3F3" />
+                                <TextBlock Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource ListView}" Margin="70,10,10,10" TextAlignment="Center" Foreground="#FFF8F3F3" />
+                                <TextBlock Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource ListView}" Margin="60,10,10,10" TextAlignment="Center" Foreground="#FFF8F3F3" />
+                                <TextBlock Text="{Binding DateOfBirth, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource ListView}" TextAlignment="Center" Margin="70,10,10,10" Foreground="#FFF8F3F3" />
+                                <TextBlock Text="{Binding GPA, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource ListView}" Margin="80,10,10,10" TextAlignment="Center" Foreground="#FFF8F3F3" />
+
+                            </StackPanel>
+
+                        </Border>
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+
+    </Grid>
+</Window>
