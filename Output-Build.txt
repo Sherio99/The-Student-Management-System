@@ -1,0 +1,6 @@
+﻿Build started...
+1>------ Build started: Project: Desktop01, Configuration: Debug Any CPU ------
+1>Skipping analyzers to speed up the build. You can execute 'Build' or 'Rebuild' command to run analyzers.
+1>Skipping analyzers to speed up the build. You can execute 'Build' or 'Rebuild' command to run analyzers.
+1>Desktop01 -> C:\ABC\Sem 3\GUI Programming\Individual Project\Desktop01\Desktop01\bin\Debug\net6.0-windows\Desktop01.dll
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
